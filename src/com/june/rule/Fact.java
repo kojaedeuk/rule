@@ -364,6 +364,7 @@ public class Fact
 		} else if ('\'' == str) {
 			str_index = str_index + 1; // \
 			StringBuffer buffer = new StringBuffer();
+			buffer.append("'");
 			while (true) {
 				buffer.append(inStr.charAt(str_index));
 				str_index = str_index + 1;
@@ -374,6 +375,7 @@ public class Fact
 					throw new RuleException("end of string");
 				}
 			} // end while
+			buffer.append("'");
 			token = buffer.toString();
 			str_index = str_index + 1;
 			type = "STRING";

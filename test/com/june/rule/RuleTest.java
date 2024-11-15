@@ -12,7 +12,7 @@ class RuleTest {
 	void shouldPerformAnActionWithBuilder()
 	{
 		/*
-		 * 다건 처리 예
+		 * 수정보험료 이벤트 선언
 		 */
 		final Rule ruleMap = RuleBuilder.when(new ConditionMapHandler()).then(new ActionMaptHandler());
 
@@ -29,7 +29,7 @@ class RuleTest {
 		/*
 		 * Fact 생성
 		 */
-	    final Fact fact = new Fact(list, map);
+	    Fact fact = new Fact(list, map);
 	    
 	    /*
 	     * rule 실행
@@ -39,23 +39,49 @@ class RuleTest {
 		System.out.println(">>>>"+res); 
 
 		/*
-		 * 수수료 예
+		 * 수수료 이벤트 선언
 		 */
 		final Rule rule = RuleBuilder.when(new ConditionHandler()).then(new ActionHandler());
-		fact.setValue("pRate", 01);
-		fact.setValue("condition", "1"); //조건식
-		fact.setValue("formula", "pRate * aPremium"); //계산식
-		fact.setValue("res_col", "charge"); //반환 컬럼
-		fact.setValue("clf_cd", "01"); //분류코드(01:단건,02:다건)
-	    res = rule.run(fact);
+		/*
+		 * 대상건 조회2
+		 */
+		HashMap<String, Object> map2 = getMap2();
+		map2.put("aPremium", res.get("aPremium")); //수정보험료
+		
+		/*
+		 * Fact 생성
+		 */
+		Fact fact2 = new Fact(null, map2);
+		
+	    /*
+	     * rule 실행
+	     */
+	    res = rule.run(fact2);
 	    
-		System.out.println(">>>>"+res.get("Ccc")); 
+		System.out.println(">>>>"+res.get("charge")); 
 
+	}
+
+	/**
+	 * 대상건2 map
+	 * @return map
+	 */
+	private HashMap<String, Object> getMap2()
+	{
+		HashMap<String, Object> map = new HashMap<>();
+	    
+		map.put("pRate", 0.1); //지급율
+		map.put("condition", "1"); //조건식
+		map.put("formula", "pRate * aPremium"); //계산식
+		map.put("res_col", "charge"); //반환 컬럼
+		map.put("clf_cd", "01"); //분류코드(01:단건,02:다건)
+		
+		return map;
 	}
 	
 	/**
 	 * 대상건 map
-	 * @return
+	 * @return map
 	 */
 	private HashMap<String, Object> getMap()
 	{
@@ -82,7 +108,7 @@ class RuleTest {
 			HashMap<String, Object> map_sub = new HashMap<>();
 			map_sub.put("pod", "A001"); //상품코드
 			map_sub.put("pPeriod", 1+i); //납입회차
-			map_sub.put("cRate", 0.1+i*0.1); //수정율
+			map_sub.put("cRate", i*0.1); //수정율
 			list.add(map_sub);
 		}
 		

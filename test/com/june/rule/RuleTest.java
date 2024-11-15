@@ -12,7 +12,7 @@ class RuleTest {
 	void shouldPerformAnActionWithBuilder()
 	{
 		/*
-		 * 수정보험료 이벤트 선언
+		 * 수정보험료 이벤트 선언(다건)
 		 */
 		final Rule ruleMap = RuleBuilder.when(new ConditionMapHandler()).then(new ActionMaptHandler());
 
@@ -39,7 +39,7 @@ class RuleTest {
 		System.out.println(">>>>"+res); 
 
 		/*
-		 * 수수료 이벤트 선언
+		 * 수수료 이벤트 선언(단건)
 		 */
 		final Rule rule = RuleBuilder.when(new ConditionHandler()).then(new ActionHandler());
 		/*

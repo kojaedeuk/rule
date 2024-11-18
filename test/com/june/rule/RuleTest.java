@@ -51,7 +51,7 @@ class RuleTest {
 		/*
 		 * Fact 생성
 		 */
-		Fact fact2 = new Fact(null, map2);
+		Fact fact2 = new Fact(map2);
 		
 	    /*
 	     * rule 실행

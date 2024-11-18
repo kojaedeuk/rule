@@ -24,7 +24,17 @@ public class Fact
 	{
 		this(new ArrayList<>(), new HashMap<String, Object>());
 	}
-
+	
+	/**
+	 * 생성자
+	 * 
+	 * @param facts 입력값 단건
+	 */
+	public Fact(HashMap<String, Object> fact) {
+		this(null, fact);
+		this.list_index = 0;
+	}
+	
 	/**
 	 * 생성자
 	 * 

@@ -1,5 +1,6 @@
 # rule
  업무용 애플리케이션(application)에는 수많은 업무 규칙이 존재한다. 문재는 비슷한 유형의 업무규칙이 여러 애플리케이션에 존재한다는 것이다. 업무규칙이 변경되거나 추가되었을 때 각각의 애플리케이션을 수정해야 한다. 애플리케이션을 수정하지 않고 보다 효과적으로 관리하기 위해 업무규칙을 애플리케이션과 분리하는 Rule System이 주목받기 시작했다. Rule System은 업무 규칙을 애플리케이션으로부터 분리하여 업무규칙이 수정 되어 질 때 애플리케이션을 수정할 필요가 없다. 룰을 정의할 때 사용하는 언어를 사용자 친화적으로 설계하여 일반인도 쉽게 이해할 수 있게 하여 직접 입력 및 편집할 수 있다. 복잡한 업무 규칙을 정의하고, 운영하고, 관리하는데 있어 매우 효과적이다.
 
-보통의 애플리케이션에서는 data(Fact)를 조회하여 나온 값들을 조건(Condition) 절과 비교하여 참인 것에 해당하는 프로세스를 실행(Action)합니다. Rule System에서는 이 3가지 요소를 관리합니다. 
-[https://github.com/kojaedeuk/rule/commits?author=kojaedeuk](https://github.com/kojaedeuk/rule/blob/main/RULE01.png)
+보통의 애플리케이션에서는 data(Fact)를 조회하여 나온 값들을 조건(Condition) 절과 비교하여 참인 것에 해당하는 프로세스를 실행(Action)합니다. Rule System에서는 이 3가지 요소를 관리합니다.
+
+https://github.com/kojaedeuk/rule/blob/main/RULE01.png

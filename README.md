@@ -3,4 +3,4 @@
 
 보통의 애플리케이션에서는 data(Fact)를 조회하여 나온 값들을 조건(Condition) 절과 비교하여 참인 것에 해당하는 프로세스를 실행(Action)합니다. Rule System에서는 이 3가지 요소를 관리합니다.
 
-https://github.com/kojaedeuk/rule/blob/main/RULE01.png
+![RULE01]([복사한 링크 주소](https://github.com/kojaedeuk/rule/blob/main/RULE01.png))

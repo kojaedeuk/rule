@@ -5,9 +5,6 @@
 
 ![https://github.com/kojaedeuk/rule/blob/main/RULE01.png)](https://github.com/kojaedeuk/rule/blob/main/RULE01.png)
 
-#### **제목**  
-**Table-Rule 기반의 Rule System 설계 및 응용 연구**  
-
 #### **초록**  
 Table-Rule 방식에 기반한 Rule System의 설계와 구현 원리를 분석하고, 이를 다양한 응용 분야에 적용한 사례를 논의한다. Rule System은 정형화된 규칙에 따라 데이터를 처리하고 의사 결정을 지원하는 시스템으로, Table-Rule 방식은 데이터와 규칙을 명확하게 구조화하여 유지보수성과 확장성을 극대화한다. 본 연구는 Table-Rule 방식의 주요 개념과 장점을 탐구하고, 다양한 실제 사례를 통해 이 방식의 실용성을 검증하였다.  
 

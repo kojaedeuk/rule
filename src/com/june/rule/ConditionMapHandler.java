@@ -1,3 +1,11 @@
+/**------------------------------------------------------------------------------
+ * PROJ : JUNE PROJECT
+ * NAME : com.june.rule ConditionMapHandler.java
+ * DESC : Rule system engine Project
+ * VER  : v2.0
+ * Copyright 2000 JUNE All rights reserved
+ *------------------------------------------------------------------------------
+ */
 package com.june.rule;
 
 import java.math.BigDecimal;
@@ -26,7 +34,7 @@ public class ConditionMapHandler implements Condition
 		boolean isTrue = false;
 
 		//조건식을 변환 한다.
-		String condition = fact.replaceCondition();
+		String condition = StringReplace.replace(fact.getMap(), String.valueOf(fact.getValue("condition")));
 		for(HashMap<String, Object> map : fact.getList())
 		{
 			if( ((BigDecimal)KCalc.calculate(map, condition)).compareTo(BigDecimal.ZERO) > 0 ) 

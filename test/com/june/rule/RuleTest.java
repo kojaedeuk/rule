@@ -21,6 +21,7 @@ class RuleTest {
 	@Test
 	void shouldPerformAnActionWithBuilder()
 	{
+		//로깅 여부 세팅
 		KCalc.setLogging(true);
 
 		/*

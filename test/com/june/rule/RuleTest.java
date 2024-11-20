@@ -14,11 +14,15 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import com.june.calc.KCalc;
+
 class RuleTest {
 
 	@Test
 	void shouldPerformAnActionWithBuilder()
 	{
+		KCalc.setLogging(true);
+
 		/*
 		 * 수정보험료 이벤트 선언(다건)
 		 */

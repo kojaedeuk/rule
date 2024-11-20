@@ -14,7 +14,7 @@ class RuleTest {
 		/*
 		 * 수정보험료 이벤트 선언(다건)
 		 */
-		final Rule ruleMap = RuleBuilder.when(new ConditionMapHandler()).then(new ActionCalcHandler());
+		final Rule rule = RuleBuilder.when(new ConditionCalcHandler()).then(new ActionCalcHandler());
 
 		/*
 		 * 수정율 읽기
@@ -25,7 +25,6 @@ class RuleTest {
 		 * 대상건 조회
 		 */
 		HashMap<String, Object> map = getMap();
-//		System.out.println("map >>>>"+map); 
 		
 		/*
 		 * Fact 생성
@@ -35,14 +34,9 @@ class RuleTest {
 	    /*
 	     * rule 실행
 	     */
-	    HashMap<String, Object> res = ruleMap.run(fact);
-	    
-//		System.out.println("res >>>>"+res); 
+	    HashMap<String, Object> res = rule.run(fact);
+	    System.out.println(">>>>"+res.get("aPremium")); 
 
-		/*
-		 * 수수료 이벤트 선언(단건)
-		 */
-		final Rule rule = RuleBuilder.when(new ConditionHandler()).then(new ActionCalcHandler());
 		/*
 		 * 대상건 조회2 및 fact 세팅
 		 */
@@ -53,14 +47,13 @@ class RuleTest {
 		fact.setValue("clf_cd", map2.get("clf_cd")); //분류코드(01:단건,02:다건)
 		fact.setValue("formula", map2.get("formula"));
 		fact.setValue("aPremium", res.get("aPremium")); //수정보험료
-//		System.out.println("map >>>>"+fact.getMap()); 
 		
 	    /*
 	     * rule 실행
 	     */
 	    res = rule.run(fact);
 	    
-//		System.out.println(">>>>"+res.get("charge")); 
+		System.out.println(">>>>"+res.get("charge")); 
 
 	}
 

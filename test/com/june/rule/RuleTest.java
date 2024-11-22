@@ -53,12 +53,7 @@ class RuleTest {
 		/*
 		 * 대상건 조회2 및 fact 세팅
 		 */
-		HashMap<String, Object> map2 = getMap2();
-		fact.setValue("res_col", map2.get("res_col"));
-		fact.setValue("pRate", map2.get("pRate"));
-		fact.setValue("condition", map2.get("condition")); 
-		fact.setValue("clf_cd", map2.get("clf_cd")); //분류코드(01:단건,02:다건)
-		fact.setValue("formula", map2.get("formula"));
+		fact.setMap(getMap2());
 		fact.setValue("aPremium", res.get("aPremium")); //수정보험료
 		
 	    /*

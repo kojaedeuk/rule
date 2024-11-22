@@ -111,6 +111,16 @@ public class Fact
 	}
 
 	/**
+	 * map 세팅
+	 * 
+	 * @return
+	 */
+	public void setMap(HashMap<String, Object> map) {
+		this.map.clear();
+		this.map.putAll(map);
+	}
+	
+	/**
 	 * 조건절에 맞는 색인 반환
 	 * 
 	 * @return

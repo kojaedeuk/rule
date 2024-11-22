@@ -93,6 +93,18 @@ public class Fact
 	}
 
 	/**
+	 * 목록 설정
+	 * 
+	 * @return
+	 */
+	public void setList(List<HashMap<String, Object>> list) {
+		this.list.clear();
+		for (HashMap<String, Object> hashMap : list) {
+			this.list.add(hashMap);			
+		}
+	}
+
+	/**
 	 * 목록 반환
 	 * 
 	 * @return
@@ -111,12 +123,11 @@ public class Fact
 	}
 
 	/**
-	 * map 세팅
+	 * map 설정
 	 * 
 	 * @return
 	 */
 	public void setMap(HashMap<String, Object> map) {
-		this.map.clear();
 		this.map.putAll(map);
 	}
 	
